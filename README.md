@@ -1,5 +1,11 @@
 # Milwaukee_ZipCode_Alder_Crosswalk
 
+## Requirements
+
+Postgres with PostGIS (including command line utilities `psql` and `shp2pgsql `), Ruby
+
+`wget` is used for downloading files, but files could be downloaded manually and moved to the folder
+
 
 ### MPROP Data
 
