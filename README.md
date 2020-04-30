@@ -1,11 +1,20 @@
 # Milwaukee_ZipCode_Alder_Crosswalk
 
+Based on John Johnson's methodology here: https://github.com/jdjohn215/Milwaukee-Geo-Crosswalks
+
+- Download [crosswalk.csv](crosswalk.csv)
+
 ## Requirements
 
 Postgres with PostGIS (including command line utilities `psql` and `shp2pgsql`), Ruby
 
 `wget` is used for downloading files, but files could be downloaded manually and moved to the folder
 
+The steps below detail each step, but they are also combined into a shell script that can be run with:
+
+```sh
+sh script.sh
+```
 
 ### MPROP Data
 
@@ -15,7 +24,7 @@ download MPROP data (https://data.milwaukee.gov/dataset/mprop)
 wget https://data.milwaukee.gov/dataset/562ab824-48a5-42cd-b714-87e205e489ba/resource/0a2c7f31-cd15-4151-8222-09dd57d5f16d/download/mprop.csv
 ```
 
-(optional) convert line endings from DOS
+convert line endings from DOS to UNIX
 
 ```sh
 tr "\r" "\n" < mprop.csv > converted.csv
@@ -97,4 +106,4 @@ psql -d properties -f convert_geometries_and_create_indices.sql
 psql -d properties -f crosswalks.sql
 ```
 
-The crosswalk data should now be exported to `crosswalks.csv`!
+The crosswalk data should now be exported to `crosswalk.csv`!

@@ -20,4 +20,4 @@ inner join total ald_total on ald_total.name = a.geo_alder
 where a.year = 2020 and a.number_of_bedrooms >= 0 and a.land_use_general::integer BETWEEN 1 AND 4 group by z.zcta5ce10, a.geo_alder order by z.zcta5ce10, a.geo_alder
 );
 
-\copy (SELECT * FROM crosswalks) TO 'crosswalks.csv' WITH DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM crosswalks) TO 'crosswalk.csv' WITH DELIMITER ',' CSV HEADER;
