@@ -96,3 +96,5 @@ psql -d properties -f convert_geometries_and_create_indices.sql
 ```sh
 psql -d properties -f crosswalks.sql
 ```
+
+The crosswalk data should now be exported to `crosswalks.csv`!
