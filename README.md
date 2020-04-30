@@ -92,4 +92,4 @@ psql -d properties -f convert_geometries_and_create_indices.sql
 ```
 
 # build and save crosswalk CSV
-psql -d properties -f crosswalks.csv
+psql -d properties -f crosswalks.sql
